@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: Properties/Outlets
     @IBOutlet weak var nameLabel: UILabel!
@@ -16,14 +16,23 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        // Delegating Text Field
+        nameTextField.delegate = self
     }
 
-    /*override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }*/
+    // MARK: UITextFieldDelegate
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        // Resigning first responder status
+        textField.resignFirstResponder()
+        return true
+    }
 
+    func textFieldDidEndEditing(textField: UITextField) {
+        //Setting label name to entered text after editing
+        nameLabel.text = textField.text
+        textField.text = ""
+    }
+    
     // MARK: Actions
     @IBAction func resetButton(sender: UIButton) {
         nameLabel.text = "Default Text"
