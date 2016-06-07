@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E3B2FDE1D065B8700005633 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3B2FDD1D065B8700005633 /* RatingControl.swift */; };
 		9E60750F1CEE99F000B950EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E60750E1CEE99F000B950EE /* AppDelegate.swift */; };
 		9E6075111CEE99F000B950EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6075101CEE99F000B950EE /* ViewController.swift */; };
 		9E6075141CEE99F000B950EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E6075121CEE99F000B950EE /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9E3B2FDD1D065B8700005633 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		9E60750B1CEE99F000B950EE /* FoodLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E60750E1CEE99F000B950EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9E6075101CEE99F000B950EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 		9E6075021CEE99F000B950EE = {
 			isa = PBXGroup;
 			children = (
+				9E3B2FDD1D065B8700005633 /* RatingControl.swift */,
 				9E60750D1CEE99F000B950EE /* FoodLogger */,
 				9E6075221CEE99F000B950EE /* FoodLoggerTests */,
 				9E60750C1CEE99F000B950EE /* Products */,
@@ -200,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E6075111CEE99F000B950EE /* ViewController.swift in Sources */,
+				9E3B2FDE1D065B8700005633 /* RatingControl.swift in Sources */,
 				9E60750F1CEE99F000B950EE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,6 +398,7 @@
 				9E60752A1CEE99F000B950EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9E60752B1CEE99F000B950EE /* Build configuration list for PBXNativeTarget "FoodLoggerTests" */ = {
 			isa = XCConfigurationList;
@@ -402,6 +407,7 @@
 				9E60752D1CEE99F000B950EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -18,29 +19,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="EVA-Bm-XwN">
-                                <rect key="frame" x="20" y="80" width="560" height="121"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="EVA-Bm-XwN">
+                                <rect key="frame" x="20" y="80" width="560" height="701"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Food" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fT-yE-Uiq">
-                                        <rect key="frame" x="0.0" y="0.0" width="84" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fT-yE-Uiq">
+                                        <rect key="frame" x="237" y="0.0" width="87" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Food" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n4m-Db-mdW">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter meal name" borderStyle="roundedRect" placeholder="Enter Food" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n4m-Db-mdW">
                                         <rect key="frame" x="0.0" y="41" width="560" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04M-f5-fZe">
-                                        <rect key="frame" x="0.0" y="91" width="126" height="30"/>
-                                        <state key="normal" title="Reset Default Text"/>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Vx5-f8-38y">
+                                        <rect key="frame" x="10" y="91" width="540" height="540"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Vx5-f8-38y" secondAttribute="height" multiplier="1:1" id="ogT-d8-IWb"/>
+                                        </constraints>
                                         <connections>
-                                            <action selector="resetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NHz-jl-m1W"/>
+                                            <outletCollection property="gestureRecognizers" destination="NmS-1d-LfC" appends="YES" id="2Ke-BY-M5c"/>
                                         </connections>
-                                    </button>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JLM-Ml-BcY" customClass="RatingControl" customModule="FoodLogger" customModuleProvider="target">
+                                        <rect key="frame" x="160" y="651" width="240" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="n4m-Db-mdW" secondAttribute="trailing" id="Vxo-Xt-cJI"/>
+                                    <constraint firstItem="n4m-Db-mdW" firstAttribute="leading" secondItem="EVA-Bm-XwN" secondAttribute="leading" id="hhi-mM-aJ4"/>
                                     <constraint firstAttribute="trailing" secondItem="n4m-Db-mdW" secondAttribute="trailing" id="jpM-7p-wwz"/>
                                     <constraint firstItem="n4m-Db-mdW" firstAttribute="leading" secondItem="EVA-Bm-XwN" secondAttribute="leading" id="vnI-1h-kDn"/>
                                 </constraints>
@@ -56,11 +66,20 @@
                     <connections>
                         <outlet property="nameLabel" destination="0fT-yE-Uiq" id="l7s-PU-jWW"/>
                         <outlet property="nameTextField" destination="n4m-Db-mdW" id="b3q-8a-3xA"/>
+                        <outlet property="photoImageView" destination="Vx5-f8-38y" id="Gho-e5-8Lc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="NmS-1d-LfC">
+                    <connections>
+                        <action selector="photoImageViewTap:" destination="BYZ-38-t0r" id="N5P-Rb-Gug"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="347" y="320"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="DefaultPhoto" width="540" height="540"/>
+    </resources>
 </document>
