@@ -11,26 +11,21 @@ import XCTest
 
 class FoodLoggerTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+//MARK: FoodLogger Tests
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
+    func testMealInitialization () {
+        //success case
+        let goodMeal = Meal(name: "Tortilla Wrap", rating: 5, photo: nil)
+        XCTAssertNotNil(goodMeal)
+        
+        //Failure case
+        let noMeal = Meal(name: "", rating: 0, photo: nil)
+        XCTAssertNil(noMeal, "Meal name cannot be blank")
+        
+        //Failure case: Rating less than 0
+        let ratingErrorMeal = Meal(name: "Good Food", rating: -1, photo: nil)
+        XCTAssertNil(ratingErrorMeal, "rating cannot be less than 0")
+        
     }
     
 }
