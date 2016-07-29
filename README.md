@@ -1,3 +1,3 @@
 # FoodLogger
 
-***iOS Trail App***
+***iOS Trial App***
